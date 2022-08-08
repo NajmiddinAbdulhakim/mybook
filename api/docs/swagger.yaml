@@ -1,4 +1,26 @@
 definitions:
+  models.Author:
+    properties:
+      first_name:
+        type: string
+      id:
+        type: string
+      last_name:
+        type: string
+      photo_link:
+        type: string
+    type: object
+  models.Book:
+    properties:
+      author_id:
+        type: string
+      id:
+        type: string
+      photo_link:
+        type: string
+      title:
+        type: string
+    type: object
   models.User:
     properties:
       email:
@@ -31,7 +53,7 @@ paths:
         name: author
         required: true
         schema:
-          $ref: '#/definitions/models.User'
+          $ref: '#/definitions/models.Author'
       produces:
       - application/json
       responses:
@@ -39,7 +61,7 @@ paths:
           description: OK
           schema:
             type: string
-      summary: Create author summary
+      summary: Create authors summary
       tags:
       - Author
   /book/create:
@@ -53,7 +75,7 @@ paths:
         name: book
         required: true
         schema:
-          $ref: '#/definitions/models.User'
+          $ref: '#/definitions/models.Book'
       produces:
       - application/json
       responses:
@@ -61,7 +83,7 @@ paths:
           description: OK
           schema:
             type: string
-      summary: Create book summary
+      summary: Create books summary
       tags:
       - Book
   /user/create:
@@ -83,7 +105,7 @@ paths:
           description: OK
           schema:
             type: string
-      summary: Create user summary
+      summary: Create users summary
       tags:
       - User
 swagger: "2.0"

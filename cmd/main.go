@@ -23,7 +23,7 @@ func main() {
 	server := api.NewRouter(api.Option{
 
 		Conf:           cfg,
-		ServiceManager: service,
+		ServiceManager: &service,
 	})
 
 	if err := server.Run(cfg.HTTPPort); err != nil {

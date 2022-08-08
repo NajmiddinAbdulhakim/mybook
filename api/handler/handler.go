@@ -6,12 +6,12 @@ import (
 )
 
 type Handler struct {
-	serviceManager service.Service
+	serviceManager service.Repository
 	cfg            config.Config
 }
 
 type HandlerConfig struct {
-	ServiceManager service.Service
+	ServiceManager service.Repository
 	Cfg            config.Config
 }
 

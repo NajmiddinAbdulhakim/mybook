@@ -10,13 +10,13 @@ import (
 	"github.com/gin-gonic/gin"
 )
 // CreateUser creates book
-// @Summary Create book summary
+// @Summary Create books summary
 // @Description This api is using create new book
 // @Tags Book
 // @Accept json
 // @Produce json
 // @Success 200 {string} Success
-// @Param book body models.User true "book body"
+// @Param book body models.Book true "book body"
 // @Router /book/create [post]
 func (h *Handler) CreateBook(c *gin.Context) {
 

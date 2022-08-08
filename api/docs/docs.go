@@ -32,7 +32,7 @@ const docTemplate = `{
                 "tags": [
                     "Author"
                 ],
-                "summary": "Create author summary",
+                "summary": "Create authors summary",
                 "parameters": [
                     {
                         "description": "author body",
@@ -40,7 +40,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.User"
+                            "$ref": "#/definitions/models.Author"
                         }
                     }
                 ],
@@ -66,7 +66,7 @@ const docTemplate = `{
                 "tags": [
                     "Book"
                 ],
-                "summary": "Create book summary",
+                "summary": "Create books summary",
                 "parameters": [
                     {
                         "description": "book body",
@@ -74,7 +74,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.User"
+                            "$ref": "#/definitions/models.Book"
                         }
                     }
                 ],
@@ -100,7 +100,7 @@ const docTemplate = `{
                 "tags": [
                     "User"
                 ],
-                "summary": "Create user summary",
+                "summary": "Create users summary",
                 "parameters": [
                     {
                         "description": "user body",
@@ -124,6 +124,40 @@ const docTemplate = `{
         }
     },
     "definitions": {
+        "models.Author": {
+            "type": "object",
+            "properties": {
+                "first_name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_name": {
+                    "type": "string"
+                },
+                "photo_link": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Book": {
+            "type": "object",
+            "properties": {
+                "author_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "photo_link": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                }
+            }
+        },
         "models.User": {
             "type": "object",
             "properties": {

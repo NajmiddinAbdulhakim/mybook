@@ -1,7 +1,6 @@
 package postgres
 
 import (
-	"context"
 	"database/sql"
 
 	"github.com/NajmiddinAbdulhakim/mybook/models"
@@ -15,7 +14,7 @@ func NewBookRepo(db *sql.DB) *BookRepo {
 	return &BookRepo{db: db}
 }
 
-func (r *BookRepo) CreateBook(ctx context.Context, b *models.Book) (*models.Book, error) {
+func (r *BookRepo) CreateBook(b *models.Book) (*models.Book, error) {
 	return nil, nil
 
 }

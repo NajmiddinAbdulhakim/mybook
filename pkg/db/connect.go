@@ -35,7 +35,7 @@ func ConnectDB(cfg config.Config) (*sql.DB, error) {
 		"postgres", driver,
 	)
 	if err != nil {
-		return nil, fmt.Errorf("failed to connecting migrate :",err)
+		return nil, fmt.Errorf("failed to connecting migrate :%v",err)
 	}
 	
 	if err = m.Up(); err != nil && errors.Is(err, migrate.ErrNoChange) {

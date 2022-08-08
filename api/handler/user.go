@@ -10,8 +10,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// CreateUser creates user
-// @Summary Create user summary
+// CreateUser creates users
+// @Summary Create users summary
 // @Description This api is using create new user
 // @Tags User
 // @Accept json

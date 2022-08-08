@@ -1,7 +1,6 @@
 package postgres
 
 import (
-	"context"
 	"database/sql"
 
 	"github.com/NajmiddinAbdulhakim/mybook/models"
@@ -15,7 +14,7 @@ func NewUserRepo(db *sql.DB) *UserRepo {
 	return &UserRepo{db: db}
 }
 
-func (r *UserRepo) CreateUser(ctx context.Context, u *models.User) (*models.User, error) {
+func (r *UserRepo) CreateUser(u *models.User) (*models.User, error) {
 	return nil, nil
 
 }

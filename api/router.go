@@ -12,7 +12,7 @@ import (
 )
 
 type Option struct {
-	ServiceManager service.Service
+	ServiceManager service.Repository
 	Conf           config.Config
 }
 

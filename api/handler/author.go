@@ -2,7 +2,6 @@ package handler
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"net/http"
 	"time"
@@ -12,13 +11,13 @@ import (
 )
 
 // CreateUser creates author
-// @Summary Create author summary
+// @Summary Create authors summary
 // @Description This api is using create new author
 // @Tags Author
 // @Accept json
 // @Produce json
 // @Success 200 {string} Success
-// @Param author body models.User true "author body"
+// @Param author body models.Author true "author body"
 // @Router /author/create [post]
 func (h *Handler) CreateAuthor(c *gin.Context) {
 	var body models.Author
@@ -30,7 +29,6 @@ func (h *Handler) CreateAuthor(c *gin.Context) {
 		})
 		log.Printf(`failed to bind json for author: %v`, err)
 	}
-	fmt.Println(body)
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*7)
 	defer cancel()
