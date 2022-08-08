@@ -1,8 +1,9 @@
 package main
 
 import (
-	"fmt"
+	"log"
 
+	"github.com/NajmiddinAbdulhakim/mybook/api"
 	"github.com/NajmiddinAbdulhakim/mybook/config"
 	"github.com/NajmiddinAbdulhakim/mybook/pkg/db"
 	"github.com/NajmiddinAbdulhakim/mybook/service"
@@ -17,6 +18,17 @@ func main() {
 		panic(err)
 	}
 
-	server := service.NewService(storage.NewStoragePg(db))
-	fmt.Print(server)
+	service := service.NewService(storage.NewStoragePg(db))
+
+	server := api.NewRouter(api.Option{
+
+		Conf:           cfg,
+		ServiceManager: service,
+	})
+
+	if err := server.Run(cfg.HTTPPort); err != nil {
+		log.Fatal(`failed to run http server: `, err)
+		panic(err)
+	}
+
 }

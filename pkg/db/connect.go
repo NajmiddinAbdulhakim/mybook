@@ -31,11 +31,11 @@ func ConnectDB(cfg config.Config) (*sql.DB, error) {
 		return nil, fmt.Errorf("failed to connecting migrate driver")
 	}
 	m, err := migrate.NewWithDatabaseInstance(
-		"file://postgres/migrations",
+		"file://migrations",
 		"postgres", driver,
 	)
 	if err != nil {
-		return nil, fmt.Errorf("failed to connecting migrate")
+		return nil, fmt.Errorf("failed to connecting migrate :",err)
 	}
 	
 	if err = m.Up(); err != nil && errors.Is(err, migrate.ErrNoChange) {
