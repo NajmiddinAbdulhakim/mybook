@@ -11,7 +11,15 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-
+// CreateUser creates author
+// @Summary Create author summary
+// @Description This api is using create new author
+// @Tags Author
+// @Accept json
+// @Produce json
+// @Success 200 {string} Success
+// @Param author body models.User true "author body"
+// @Router /author/create [post]
 func (h *Handler) CreateAuthor(c *gin.Context) {
 	var body models.Author
 

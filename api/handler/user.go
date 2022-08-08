@@ -10,6 +10,15 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// CreateUser creates user
+// @Summary Create user summary
+// @Description This api is using create new user
+// @Tags User
+// @Accept json
+// @Produce json
+// @Success 200 {string} Success
+// @Param user body models.User true "user body"
+// @Router /user/create [post]
 func (h *Handler) CreateUser(c *gin.Context) {
 	var body models.User
 

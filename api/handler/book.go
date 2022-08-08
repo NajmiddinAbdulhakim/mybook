@@ -9,7 +9,15 @@ import (
 	"github.com/NajmiddinAbdulhakim/mybook/models"
 	"github.com/gin-gonic/gin"
 )
-
+// CreateUser creates book
+// @Summary Create book summary
+// @Description This api is using create new book
+// @Tags Book
+// @Accept json
+// @Produce json
+// @Success 200 {string} Success
+// @Param book body models.User true "book body"
+// @Router /book/create [post]
 func (h *Handler) CreateBook(c *gin.Context) {
 
 	var body models.Book
