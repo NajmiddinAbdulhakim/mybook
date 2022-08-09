@@ -31,7 +31,7 @@ func ConnectDB(cfg config.Config) (*sql.DB, error) {
 		return nil, fmt.Errorf("failed to connecting migrate driver")
 	}
 	m, err := migrate.NewWithDatabaseInstance(
-		"file://migrations",
+		"file:/home/najmiddin/go/src/github.com/NajmiddinAbdulhakim/mybook/migrations",
 		"postgres", driver,
 	)
 	if err != nil {
